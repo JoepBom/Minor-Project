@@ -4,11 +4,13 @@ using System.Collections;
 public class PhilMovement : MonoBehaviour {
 
     public float speed;
+    private NavMeshAgent playerAgent;
     private Rigidbody rb;
     private Quaternion Rotation = Quaternion.LookRotation(new Vector3(0,0,1));
 
     void Start ()
     {
+        playerAgent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
     }
 
@@ -42,7 +44,7 @@ public class PhilMovement : MonoBehaviour {
             if (Input.GetKeyDown("space") && hit.transform.gameObject.CompareTag("Interactable Object"))
             {
                 print("Interacted with object");
-                Destroy(hit.transform.gameObject);
+                hit.transform.gameObject.GetComponent<PhilInteractable>().Interact(hit.transform.gameObject);
             }
         }
     }
