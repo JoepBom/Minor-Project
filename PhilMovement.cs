@@ -5,7 +5,7 @@ public class PhilMovement : MonoBehaviour {
 
     public float speed;
     private Rigidbody rb;
-    private Quaternion Rotation;
+    private Quaternion Rotation = Quaternion.LookRotation(new Vector3(0,0,1));
 
     void Start ()
     {
@@ -33,8 +33,17 @@ public class PhilMovement : MonoBehaviour {
             Rotation = Quaternion.LookRotation(movement.normalized);
             rb.MoveRotation(Rotation);
         }
-        
 
+        //Preforming Raycast and Interaction
+        Vector3 fwd = transform.TransformDirection(Vector3.forward);
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, fwd, out hit, 2 ))
+        {
+            if (Input.GetKeyDown("space") && hit.transform.gameObject.CompareTag("Interactable Object"))
+            {
+                print("Interacted with object");
+                Destroy(hit.transform.gameObject);
+            }
+        }
     }
-   
 }
