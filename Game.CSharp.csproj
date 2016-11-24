@@ -64,13 +64,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
-    <Compile Include="Assets\Scripts\FieldOfView.cs" />
     <Compile Include="Assets\Scripts\MouseControls.cs" />
     <Compile Include="Assets\Scripts\Movement\PhilMovement.cs" />
     <Compile Include="Assets\Scripts\Movement\PickUpMovement.cs" />
     <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\Path\EditorPath.cs" />
     <Compile Include="Assets\Scripts\Path\MoveonPath.cs" />
+    <Compile Include="Assets\Scripts\Sight\FieldOfView.cs" />
+    <Compile Include="Assets\Scripts\Sight\PlayerSight.cs" />
+    <Compile Include="Assets\Scripts\Sight\PlayerSightEditor.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

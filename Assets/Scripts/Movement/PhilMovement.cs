@@ -22,6 +22,7 @@ public class PhilMovement : MonoBehaviour {
     void Update()
     {
         setHealthScoreText();
+
     }
 
     void LateUpdate()
@@ -82,5 +83,10 @@ public class PhilMovement : MonoBehaviour {
         if(i >=j)
         return i;
         return j;
+    }
+
+    public Vector3 getPosition()
+    {
+        return rb.position;
     }
 }
