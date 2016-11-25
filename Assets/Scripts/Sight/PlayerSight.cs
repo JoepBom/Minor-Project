@@ -16,7 +16,7 @@ public class PlayerSight : MonoBehaviour
 
     public bool playerSeen;
     public Vector3 playerPosition;
-    public Vector3 temp;
+    public Vector3 playerLastSeen;
 
 	// Use this for initialization
 	void Start ()
@@ -57,13 +57,17 @@ public class PlayerSight : MonoBehaviour
             Vector3 AngleD = directionFromAngle(angle, false);
             Vector3 playerRadiusD = transform.position + AngleD * getDistance(transform.position, playerPosition); //player point on the playerradius
 
+            //if player is in view Radius
             if (angle < sightAngle/2 && angle > (sightAngle * -1)/2)
             {
-                RaycastHit hit;
-                if (Physics.Raycast(transform.position,AngleD.normalized, out hit, distance))
+                RaycastHit hit; //Kind of an boolean variable for raycast hitting
+                if (Physics.Raycast(transform.position,AngleD.normalized, out hit, distance))//send out a Raycast in the direction of the player
                 {
-                    if (hit.transform.gameObject.CompareTag("Player"))
+                    if (hit.transform.gameObject.CompareTag("Player"))//if the obstacle that is reacht by the ray is tagged by "Player", than the enemy found the player
+                    {
                         playerSeen = true;
+                        playerLastSeen = playerPosition;
+                    }
                     else
                         playerSeen = false;
                 }
