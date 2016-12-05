@@ -63,14 +63,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Prefabs\Scripts\CameraController.cs" />
-    <Compile Include="Assets\Prefabs\Scripts\CarControl.cs" />
-    <Compile Include="Assets\Prefabs\Scripts\CarInteract.cs" />
-    <Compile Include="Assets\Prefabs\Scripts\Movescript.cs" />
-    <Compile Include="Assets\Prefabs\Scripts\PhilInteractable.cs" />
-    <Compile Include="Assets\Prefabs\Scripts\PhilMovement.cs" />
-    <Compile Include="Assets\Prefabs\Scripts\Portal.cs" />
-    <Compile Include="Assets\Prefabs\Scripts\ShakeObject.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\CarControl.cs" />
     <Compile Include="Assets\Scripts\CarInteract.cs" />
